@@ -5,7 +5,7 @@
 	--foreground-light: #897f7b;
 }
 
-body {
+html {
 	font-family: "NeueHaasGroteskText Pro";
 	line-height: 1.5;
 	text-shadow: none;
@@ -15,7 +15,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
+}
 
+body {
 	background-image: url("/images/dot-grid.webp");
 	background-repeat: repeat;
 

@@ -95,10 +95,6 @@ const { frontmatter, rawContent } = Astro.props;
 	code {
 		font-family: "JetBrains Mono", monospace;
 		font-size: 1rem;
-
-		@media (max-width: 768px) {
-			font-size: 0.75rem;
-		}
 	}
 
 	code {
@@ -126,11 +122,30 @@ const { frontmatter, rawContent } = Astro.props;
 	}
 
 	img {
-		width: 60%;
 		margin: 0 auto;
+		width: 60%;
+		display: block;
 	}
 
-	.big-box {
-		margin: 0 auto;
+	.container {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	@media (max-width: 768px) {
+		pre,
+		code {
+			font-size: 0.75rem;
+		}
+
+		h1 {
+			font-size: 2rem;
+		}
+		h2 {
+			font-size: 1.5rem;
+		}
+		p,
+		a {
+			font-size: 1rem;
+		}
 	}
 </style>
