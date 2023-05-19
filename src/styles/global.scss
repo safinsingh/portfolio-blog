@@ -1,5 +1,12 @@
+:root {
+	--background: #fff;
+	--foreground: #000;
+	--background-light: #e2dcc9;
+	--foreground-light: #897f7b;
+}
+
 body {
-	font-family: "Graphik";
+	font-family: "NeueHaasGroteskText Pro";
 	line-height: 1.5;
 	text-shadow: none;
 	text-transform: none;
@@ -8,16 +15,25 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-rendering: optimizeLegibility;
-	text-decoration-skip: ink;
 
-	margin: 0;
-	padding: 0;
+	background-image: url("/images/dot-grid.webp");
+	background-repeat: repeat;
+
+	padding: 3rem;
+	margin: 0rem;
 	color: var(--foreground);
 	background-color: var(--background);
+}
 
-	max-width: 80ch;
-	margin: auto;
-	padding: 2rem;
+.container {
+	display: grid;
+	flex-direction: column;
+	gap: 1rem;
+	background-color: #00000000;
+
+	max-width: 70ch;
+	margin: 0 auto;
+	grid-template-columns: 1fr;
 }
 
 a {
@@ -29,7 +45,7 @@ a {
 	background-position-y: 100%;
 	background-position-x: 0%;
 	background-repeat: no-repeat;
-	transition: background-size 0.2s ease-in-out;
+	transition: background-size 0.2s ease-out;
 
 	&:hover,
 	&:focus {
@@ -37,7 +53,29 @@ a {
 	}
 }
 
+a.visible {
+	background-size: 100% 0.1em !important;
+}
+
 p,
 a {
 	font-size: 1.25rem;
+}
+
+.big-box {
+	background-color: var(--background);
+	border: 1px solid var(--background-light);
+	outline: 5px solid var(--background);
+	border-radius: 10px;
+	padding: 2rem;
+	width: -webkit-fill-available;
+	width: -moz-available;
+	width: fill-available;
+}
+
+@media (max-width: 576px) {
+	body {
+		padding: 1.5rem;
+		background: var(--background);
+	}
 }

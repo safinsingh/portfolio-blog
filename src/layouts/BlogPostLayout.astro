@@ -13,21 +13,23 @@ const { frontmatter, rawContent } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-	<div class="header">
-		<h1>{frontmatter.title}</h1>
+	<div class="big-box">
+		<div class="header">
+			<h1>{frontmatter.title}</h1>
 
-		<span class="meta">
-			<GoBack inline /> |
-			{new Date(frontmatter.pubDate).toLocaleDateString().replaceAll("/", "-")}
-			|
-			{readTime(rawContent())} min read
-		</span>
-		<h2>Table of Contents</h2>
+			<span class="meta">
+				<GoBack inline /> |
+				{new Date(frontmatter.pubDate).toLocaleDateString().replaceAll("/", "-")}
+				|
+				{readTime(rawContent())} min read
+			</span>
+			<h2>Table of Contents</h2>
+		</div>
+		<div class="content">
+			<slot />
+		</div>
+		<GoBack inline={false} />
 	</div>
-	<div class="content">
-		<slot />
-	</div>
-	<GoBack inline={false} />
 </Layout>
 
 <style lang="scss" is:global>
@@ -93,16 +95,25 @@ const { frontmatter, rawContent } = Astro.props;
 	code {
 		font-family: "JetBrains Mono", monospace;
 		font-size: 1rem;
-		background-color: var(--background-light) !important;
 
 		@media (max-width: 768px) {
 			font-size: 0.75rem;
 		}
 	}
 
+	code {
+		border: none;
+		background-color: var(--background-light) !important;
+	}
+
+	pre > code {
+		background-color: var(--background) !important;
+	}
+
 	pre {
 		padding: 1rem;
 		border-radius: 0.5rem;
+		border: 1px solid var(--background-light);
 	}
 
 	code {
@@ -112,5 +123,14 @@ const { frontmatter, rawContent } = Astro.props;
 
 	.horizontal a {
 		font-size: 1rem;
+	}
+
+	img {
+		width: 60%;
+		margin: 0 auto;
+	}
+
+	.big-box {
+		margin: 0 auto;
 	}
 </style>
