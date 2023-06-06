@@ -122,13 +122,16 @@ const { frontmatter, rawContent } = Astro.props;
 	}
 
 	img {
-		margin: 0 auto;
 		width: 60%;
 		display: block;
 	}
 
 	.container {
 		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.youtube {
+		width: 100%;
 	}
 
 	@media (max-width: 768px) {
@@ -149,3 +152,8 @@ const { frontmatter, rawContent } = Astro.props;
 		}
 	}
 </style>
+
+<script>
+	import { iframeFormat } from "../util";
+	document.addEventListener("DOMContentLoaded", iframeFormat);
+</script>
