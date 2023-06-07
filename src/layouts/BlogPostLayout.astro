@@ -1,7 +1,6 @@
 ---
 import Layout from "./Layout.astro";
 import { readTime } from "../util";
-import "@fontsource/jetbrains-mono";
 
 import type { BlogMeta } from "../types";
 import type { MarkdownLayoutProps } from "astro";
@@ -93,7 +92,8 @@ const { frontmatter, rawContent } = Astro.props;
 
 	pre,
 	code {
-		font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+		font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+			monospace;
 		font-size: 1rem;
 	}
 

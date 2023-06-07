@@ -3,8 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import { MapPin } from "astro-feather-icons";
 import Social from "../components/Social.astro";
 import BlogPost from "../components/BlogPost.astro";
+import type { BlogMeta } from "../types";
 
-const allPosts = await Astro.glob("../pages/posts/*.md");
+const allPosts = await Astro.glob<BlogMeta>("../pages/posts/*.md");
 
 const cyber = "https://www.uscyberpatriot.org/";
 const fps = "https://www.fpspi.org/";
@@ -25,14 +26,17 @@ const fps = "https://www.fpspi.org/";
 			</div>
 		</div>
 		<p>
-			I'm a student and programmer interested in cybersecurity. I'm a 4x <a class="visible" href={cyber}>CyberPatriot</a
+			I'm a student and programmer interested in cybersecurity. I'm a 4x <a
+				class="visible"
+				href={cyber}>CyberPatriot</a
 			> National Champion and 3x <a class="visible" href={fps}>FPS</a> International Finalist.
 		</p><p>
-			I love to challenge myself with difficult problems (`homework due yesterday` and `debugging Rust errors`, to name
-			a few). In doing so, I've developed an aptitude for learning new things and simplifying their core concepts to
-			teach them others. I love to build low-level *nix apps, security training tools, websites—and just about
-			everything in between. I primarily write code in JavaScript (TypeScript), Rust, and C. In my free time, I enjoy
-			playing tennis and listening to music.
+			I love to challenge myself with difficult problems (<code>homework due yesterday</code> and
+			<code>debugging Rust errors</code>, to name a few). In doing so, I've developed an aptitude
+			for learning new things and simplifying their core concepts to teach them others. I love to
+			build low-level *nix apps, security training tools, websites—and just about everything in
+			between. I primarily write code in JavaScript (TypeScript), Rust, and C. In my free time, I
+			enjoy playing tennis and listening to music.
 		</p>
 		<div id="socials">
 			<Social link="http://github.com/safinsingh" name="GitHub" />
