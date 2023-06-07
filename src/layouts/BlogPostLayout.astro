@@ -92,8 +92,7 @@ const { frontmatter, rawContent } = Astro.props;
 
 	pre,
 	code {
-		font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-			monospace;
+		font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 		font-size: 1rem;
 	}
 
@@ -122,8 +121,8 @@ const { frontmatter, rawContent } = Astro.props;
 	}
 
 	img {
-		width: 60%;
-		display: block;
+		max-width: 40ch;
+		height: auto;
 	}
 
 	.container {

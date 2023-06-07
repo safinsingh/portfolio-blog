@@ -8,15 +8,18 @@ export default defineConfig({
 	markdown: {
 		shikiConfig: {
 			theme: "github-light",
-			wrap: true,
+			wrap: true
 		},
-		rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, rehypeToc],
+		rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, rehypeToc]
 	},
 	integrations: [
 		partytown({
 			config: {
-				forward: ["dataLayer.push"],
-			},
-		}),
+				forward: ["dataLayer.push"]
+			}
+		})
 	],
+	experimental: {
+		assets: true
+	}
 });

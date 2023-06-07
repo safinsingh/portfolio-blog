@@ -6,7 +6,7 @@ layout: ../../layouts/BlogPostLayout.astro
 toc: false
 ---
 
-![/images/team.png](/images/team.png)
+![CyberPatriot XV Team Picture](../../assets/team.png)
 
 > My team and I winning our 3rd consecutive CyberPatriot Open Division National Championship.
 
