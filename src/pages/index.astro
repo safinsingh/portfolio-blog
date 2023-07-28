@@ -9,6 +9,7 @@ const allPosts = await Astro.glob<BlogMeta>("../pages/posts/*.md");
 
 const cyber = "https://www.uscyberpatriot.org/";
 const fps = "https://www.fpspi.org/";
+const lv = "https://www.youtube.com/playlist?list=PLcn9NsWbb8s4wQrX0Qi5G4kRifQHxCV9-";
 ---
 
 <Layout title="Safin Singh">
@@ -33,10 +34,10 @@ const fps = "https://www.fpspi.org/";
 		</p><p>
 			I love to challenge myself with difficult problems (<code>homework due yesterday</code> and
 			<code>debugging Rust errors</code>, to name a few). In doing so, I've developed an aptitude
-			for learning new things and simplifying their core concepts to teach them others. I love to
-			build low-level *nix apps, security training tools, websites—and just about everything in
-			between. I primarily write code in JavaScript (TypeScript), Rust, and C. In my free time, I
-			enjoy playing tennis and listening to music.
+			for learning new things and simplifying their core concepts to <a class="visible" href={lv}>
+			teach them others</a>. I love to build low-level *nix apps, security training tools,
+			websites—and just about everything in between. I primarily write code in JavaScript (TypeScript), 
+			Rust, and C. In my free time, I enjoy playing tennis & basketball and listening to music.
 		</p>
 		<div id="socials">
 			<Social link="http://github.com/safinsingh" name="GitHub" />
